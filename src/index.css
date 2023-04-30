@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import "slick-carousel/slick/slick.css"; 
+@import "slick-carousel/slick/slick-theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: 'Oswald', Courier, monospace;
+        background-color: #16182c;
+        background-image: url("./assets/bg.webp");
+        background-position: center;
+        background-repeat: repeat;
+        background-size: 50vw 100vh;
+        color: #ffff;
+    }
+
+    .mobileMenu {
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+        backdrop-filter: blur(14px);
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    
+}
+.active{
+    @apply scale-125 text-primary font-normal;
+}
+.container {
+    @apply w-full max-w-[1340px] mx-auto;
+}
+
