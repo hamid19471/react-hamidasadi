@@ -3,6 +3,7 @@ import { AiOutlineGithub } from "react-icons/ai";
 import { FaTelegram } from "react-icons/fa";
 import { BsFacebook } from "react-icons/bs";
 import Button from "../Button/Button";
+
 const HearoSection = () => {
     return (
         <div>
@@ -21,7 +22,15 @@ const HearoSection = () => {
                         Website Designer | Developer
                     </p>
                     <div>
-                        <Button name="GET A QUOTE" path="/" />
+                        <Button
+                            name="Download cv"
+                            onClick={() =>
+                                window.open(
+                                    "http://localhost:1337/uploads/CV_ca9a61e5e1.pdf",
+                                    "_blank",
+                                )
+                            }
+                        />
                     </div>
                 </div>
                 <div className="flex w-full container mt-2 relative items-end pb-20 justify-between">

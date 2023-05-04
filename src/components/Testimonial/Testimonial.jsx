@@ -1,11 +1,35 @@
 import TestimonialsCard from "../TestimonialsCard/TestimonialsCard";
-import Slider, { Settings } from "react-slick";
+import Slider from "react-slick";
 import { useEffect, useState } from "react";
-import { testimonials } from "../../FakeAPI/Testimonials";
+
 import SectionHeading from "../SectionHeading/SectionHeading";
+import axios from "axios";
 
 const estimonial = () => {
     const [active, setActive] = useState(0);
+    const [testimonials, setTestimonials] = useState([]);
+    useEffect(() => {
+        const fetchTestimonials = async () => {
+            try {
+                const { data } = await axios.get(
+                    import.meta.env.VITE_API_URL + "/testimonials?populate=*",
+                    {
+                        headers: {
+                            Authorization: `bearer ${
+                                import.meta.env.VITE_API_TOKEN
+                            }`,
+                        },
+                    },
+                );
+                setTestimonials(data.data);
+                console.log(data.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchTestimonials();
+    }, []);
+
     const setting = {
         Infinite: true,
         LayzyLoad: true,
@@ -45,7 +69,7 @@ const estimonial = () => {
                                 : "opacity-30 scale-75 duration-300"
                         }`}
                     >
-                        <TestimonialsCard key={item.id} {...item} />
+                        <TestimonialsCard key={item.id} item={item} />
                     </div>
                 ))}
             </Slider>
