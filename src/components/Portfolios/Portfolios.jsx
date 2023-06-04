@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import PortfoliosCard from "../PortfoliosCard/PortfoliosCard";
 import SectionHeading from "../SectionHeading/SectionHeading";
 import axios from "axios";
+
 const Portfolios = ({ slice }) => {
   const [portfolio, setPortfolio] = useState([]);
+
   useEffect(() => {
     const fetchPortf = async () => {
       try {
@@ -35,11 +37,13 @@ const Portfolios = ({ slice }) => {
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-36">
-          {portfolio
-            .map((item) => <PortfoliosCard item={item} key={item.id} />)
-            .slice(0, slice)}
-        </div>
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-36">
+            {portfolio
+              .map((item) => <PortfoliosCard item={item} key={item.id} />)
+              .slice(0, slice)}
+          </div>
+        </>
       )}
     </div>
   );

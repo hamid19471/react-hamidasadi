@@ -1,12 +1,19 @@
-import AboutMe from "../../components/AboutMe/AboutMe";
-import Clients from "../../components/Clients/Clients";
-import ContactMe from "../../components/ContactMe/ContactMe";
-import Experiences from "../../components/Expreriences/Experiences";
-import HearoSection from "../../components/HeroSection/HearoSection";
-import Portfolios from "../../components/Portfolios/Portfolios";
-import Services from "../../components/Services/Services";
-import Testimonial from "../../components/Testimonial/Testimonial";
-import Layout from "../../layout";
+import { lazy } from "react";
+const Layout = lazy(() => import("../../layout"));
+const AboutMe = lazy(() => import("../../components/AboutMe/AboutMe"));
+const Clients = lazy(() => import("../../components/Clients/Clients"));
+const ContactMe = lazy(() => import("../../components/ContactMe/ContactMe"));
+const Experiences = lazy(() =>
+  import("../../components/Expreriences/Experiences")
+);
+const HearoSection = lazy(() =>
+  import("../../components/HeroSection/HearoSection")
+);
+const Portfolios = lazy(() => import("../../components/Portfolios/Portfolios"));
+const Services = lazy(() => import("../../components/Services/Services"));
+const Testimonial = lazy(() =>
+  import("../../components/Testimonial/Testimonial")
+);
 
 const Home = () => {
   return (

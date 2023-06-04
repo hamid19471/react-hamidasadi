@@ -32,7 +32,7 @@ const Header = () => {
           <img src={logo} alt="hamid asadi" className="w-[188px]" />
         </div>
       </div>
-      <div className="fixed w-[400px] py-3  -translate-x-1/2 mobileMenu bottom-4 left-1/2 md:hidden z-50">
+      <div className="fixed w-[300px] py-3  -translate-x-1/2 mobileMenu bottom-4 left-1/2 md:hidden z-50">
         <div className="relative flex items-center justify-around text-primary text-[12px]">
           <div className="flex flex-col items-center justify-center">
             <Link to="/">
@@ -47,7 +47,7 @@ const Header = () => {
             </Link>
           </div>
           <div className="flex flex-col items-center justify-center">
-            <Link to="/portfolio">
+            <Link to="/portfolios">
               <FolderIcon className="w-7 h-7" />
               <p>works</p>
             </Link>
