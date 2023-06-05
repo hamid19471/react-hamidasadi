@@ -2,8 +2,9 @@ import aboutImage from "../../assets/About-Hamidasadi-section.webp";
 import { FaAward } from "react-icons/fa";
 import Button from "../Button/Button";
 import SectionHeading from "../SectionHeading/SectionHeading";
+import { Link } from "react-router-dom";
 
-const AboutMe = () => {
+const AboutMe = ({ hidden }) => {
   return (
     <div className="container">
       <div>
@@ -59,8 +60,12 @@ const AboutMe = () => {
             </p>
           </div>
           <div className="flex flex-col items-center md:flex-row gap-4">
-            <Button name="Free Consultation" path="" primary="primary" />
-            <Button name="Read More" path="/about-me" />
+            <Link to="/contact-me">
+              <Button name="Free Consultation" primary="primary" />
+            </Link>
+            <Link to="/about-me">
+              <Button name="Read More" hidden={hidden} />
+            </Link>
           </div>
         </div>
       </div>
