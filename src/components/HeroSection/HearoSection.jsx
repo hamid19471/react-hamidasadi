@@ -22,7 +22,7 @@ const HearoSection = () => {
           </p>
           <div>
             <Link
-              to={import.meta.env.VITE_URL + "/uploads/CV_ca9a61e5e1.pdf"}
+              to={import.meta.env.VITE_URL + "/uploads/CV_ed3a1d12e9.pdf"}
               rel="noreferrer"
               target={"_blank"}
             >

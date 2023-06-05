@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import AboutMe from "../../components/AboutMe/AboutMe";
 import Button from "../../components/Button/Button";
 import Clients from "../../components/Clients/Clients";
@@ -23,11 +24,17 @@ const About = () => {
             Website Designer | Developer
           </p>
           <div className="mt-10">
-            <Button name="Download CV" path="" />
+            <Link
+              to={import.meta.env.VITE_URL + "/uploads/CV_ed3a1d12e9.pdf"}
+              rel="noreferrer"
+              target={"_blank"}
+            >
+              <Button name="Download cv" />
+            </Link>
           </div>
         </div>
       </div>
-      <AboutMe />
+      <AboutMe hidden="hidden" />
       <Clients />
       <Testimonial />
       <ContactMe />
