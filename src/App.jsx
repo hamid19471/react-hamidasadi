@@ -5,7 +5,7 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import Contact from "./pages/Contact/Contact";
 import SinglePortfolio from "./pages/SinglePortfolio/SinglePortfolio";
 import { useEffect } from "react";
-
+import { Suspense } from "react";
 const ScrollToTop = () => {
   const { pathname } = useLocation();
 
@@ -20,14 +20,16 @@ function App() {
     <div className="h-screen">
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="about-me" element={<About />} />
-          <Route path="portfolios" element={<Portfolio />} />
-          <Route path="works/:id" element={<SinglePortfolio />} />
-          <Route path="contact-me" element={<Contact />} />
-          <Route path="*" element={<div>404 Error</div>} />
-        </Routes>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="about-me" element={<About />} />
+            <Route path="portfolios" element={<Portfolio />} />
+            <Route path="works/:id" element={<SinglePortfolio />} />
+            <Route path="contact-me" element={<Contact />} />
+            <Route path="*" element={<div>404 Error</div>} />
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </div>
   );
