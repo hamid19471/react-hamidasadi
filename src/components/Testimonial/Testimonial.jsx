@@ -4,10 +4,12 @@ import { useEffect, useState } from "react";
 
 import SectionHeading from "../SectionHeading/SectionHeading";
 import axios from "axios";
+import Loading from "../Loading/Loading";
 
 const Testimonial = () => {
   const [active, setActive] = useState(0);
   const [testimonials, setTestimonials] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchTestimonials = async () => {
       try {
@@ -19,13 +21,14 @@ const Testimonial = () => {
             },
           }
         );
+        setLoading(false);
         setTestimonials(data.data);
       } catch (error) {
         console.log(error);
       }
     };
     fetchTestimonials();
-  }, []);
+  }, [loading]);
 
   const setting = {
     Infinite: true,
@@ -80,11 +83,18 @@ const Testimonial = () => {
     ],
     beforeChange: (current, next) => setActive(next),
   };
+  if (loading) {
+    return (
+      <div className="container">
+        <Loading />
+      </div>
+    );
+  }
   return (
     <div className="container">
       <SectionHeading title="TRUSTED ME" subTitle="REVIEW FROM CLIENTS" />
       <Slider {...setting}>
-        {testimonials.map((item, index) => (
+        {testimonials?.map((item, index) => (
           <div
             key={item.id}
             className={`${
