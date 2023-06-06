@@ -61,7 +61,7 @@ const AboutMe = ({ hidden }) => {
           </div>
           <div className="flex flex-col items-center md:flex-row gap-4">
             <Link to="/contact-me">
-              <Button name="Free Consultation" primary="primary" />
+              <Button name="Free Consultation" path="" primary="primary" />
             </Link>
             <Link to="/about-me">
               <Button name="Read More" hidden={hidden} />
