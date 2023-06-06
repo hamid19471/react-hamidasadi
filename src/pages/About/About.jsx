@@ -1,11 +1,10 @@
-import { Link } from "react-router-dom";
 import AboutMe from "../../components/AboutMe/AboutMe";
 import Button from "../../components/Button/Button";
 import Clients from "../../components/Clients/Clients";
 import ContactMe from "../../components/ContactMe/ContactMe";
 import Testimonial from "../../components/Testimonial/Testimonial";
 import Layout from "../../layout";
-
+import { Link } from "react-router-dom";
 const About = () => {
   return (
     <Layout>
@@ -29,7 +28,7 @@ const About = () => {
               rel="noreferrer"
               target={"_blank"}
             >
-              <Button name="Download cv" />
+              <Button name="Download CV" path="" />
             </Link>
           </div>
         </div>
