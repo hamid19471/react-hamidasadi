@@ -28,8 +28,10 @@ const Header = () => {
             </React.Fragment>
           ))}
         </ul>
-        <div>
-          <img src={logo} alt="hamid asadi" className="w-[188px]" />
+        <div className="cursor-pointer">
+          <Link to="/">
+            <img src={logo} alt="hamid asadi" className="w-[188px]" />
+          </Link>
         </div>
       </div>
       <div className="fixed w-[300px] py-3  -translate-x-1/2 mobileMenu bottom-4 left-1/2 md:hidden z-50">
