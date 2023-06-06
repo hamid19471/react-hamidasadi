@@ -8,6 +8,7 @@ import { IoIosLink } from "react-icons/io";
 import { HiOutlineClock } from "react-icons/hi";
 import { BsCheck2Circle } from "react-icons/bs";
 import { useEffect, useState } from "react";
+import Loading from "../../components/Loading/Loading";
 
 const SinglePortfolio = () => {
   const { id } = useParams();
@@ -32,10 +33,14 @@ const SinglePortfolio = () => {
       }
     };
     fetchSingle();
-    console.log(loading);
   }, [id, loading]);
 
-  if (loading) return <p>Loading</p>;
+  if (loading)
+    return (
+      <div className="container">
+        <Loading />
+      </div>
+    );
 
   return (
     <Layout>
